@@ -1,0 +1,22 @@
+{
+  "name": "rope-sequence",
+  "version": "1.0.0",
+  "description": "Rope-based persistent sequence type",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "node test.js",
+    "prepublish": "buble index.js -o dist/index.js"
+  },
+  "keywords": [
+    "persistent",
+    "data",
+    "structure",
+    "rope",
+    "sequence"
+  ],
+  "author": "Marijn Haverbeke <marijnh@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "buble": "^0.12.5"
+  }
+}

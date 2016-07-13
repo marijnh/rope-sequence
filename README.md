@@ -45,7 +45,7 @@ Retrieve the element at the given position from this rope.
 
 Call the given function for each element between the given indices.
 This tends to be more efficient than looping over the indices and
-calling `get`, because it doesn't have to desend the tree for every
+calling `get`, because it doesn't have to descend the tree for every
 element.
 
 **`flatten`**`() → [T]`

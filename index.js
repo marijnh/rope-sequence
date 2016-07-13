@@ -47,7 +47,7 @@ class RopeSequence {
   // :: ((element: T, index: number), ?number, ?number)
   // Call the given function for each element between the given
   // indices. This tends to be more efficient than looping over the
-  // indices and calling `get`, because it doesn't have to desend the
+  // indices and calling `get`, because it doesn't have to descend the
   // tree for every element.
   forEach(f, from = 0, to = this.length) {
     this.forEachInner(f, from, to, 0)

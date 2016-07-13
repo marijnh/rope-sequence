@@ -7,6 +7,10 @@
     "test": "node test.js",
     "prepublish": "buble index.js -o dist/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marijnh/rope-sequence.git"
+  },
   "keywords": [
     "persistent",
     "data",

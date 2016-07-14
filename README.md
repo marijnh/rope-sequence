@@ -12,7 +12,7 @@ Licensed under the MIT license.
 
 ## class `RopeSequence<T>`
 
-`static `**`from`**`(?union<[T], RopeSequence<T>) → RopeSequence<T>`
+`static `**`from`**`(?union<[T], RopeSequence<T>>) → RopeSequence<T>`
 
 Create a rope representing the given array, or return the rope itself
 if a rope was given.
@@ -25,11 +25,11 @@ The empty rope.
 
 The length of the rope.
 
-**`append`**`(union<[T], RopeSequence<T>) → RopeSequence<T>`
+**`append`**`(union<[T], RopeSequence<T>>) → RopeSequence<T>`
 
 Append an array or other rope to this one, returning a new rope.
 
-**`prepend`**`(union<[T], RopeSequence<T>) → RopeSequence<T>`
+**`prepend`**`(union<[T], RopeSequence<T>>) → RopeSequence<T>`
 
 Prepend an array or other rope to this one, returning a new rope.
 

@@ -7,7 +7,7 @@ class RopeSequence {
   // length:: number
   // The length of the rope.
 
-  // :: (union<[T], RopeSequence<T>) → RopeSequence<T>
+  // :: (union<[T], RopeSequence<T>>) → RopeSequence<T>
   // Append an array or other rope to this one, returning a new rope.
   append(other) {
     if (!other.length) return this
@@ -19,7 +19,7 @@ class RopeSequence {
       this.appendInner(other)
   }
 
-  // :: (union<[T], RopeSequence<T>) → RopeSequence<T>
+  // :: (union<[T], RopeSequence<T>>) → RopeSequence<T>
   // Prepend an array or other rope to this one, returning a new rope.
   prepend(other) {
     if (!other.length) return this
@@ -53,7 +53,7 @@ class RopeSequence {
     this.forEachInner(f, from, to, 0)
   }
 
-  // :: (?union<[T], RopeSequence<T>) → RopeSequence<T>
+  // :: (?union<[T], RopeSequence<T>>) → RopeSequence<T>
   // Create a rope representing the given array, or return the rope
   // itself if a rope was given.
   static from(values) {

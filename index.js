@@ -88,11 +88,13 @@ class Leaf extends RopeSequence {
   }
 
   forEachInner(f, from, to, start) {
-    for (let i = from; i < to; i++) f(this.values[i], start + i)
+    for (let i = from; i < to; i++)
+      if (f(this.values[i], start + i) === false) return false
   }
 
   forEachInvertedInner(f, from, to, start) {
-    for (let i = from - 1; i >= to; i--) f(this.values[i], start + i)
+    for (let i = from - 1; i >= to; i--)
+      if (f(this.values[i], start + i) === false) return false
   }
 
   leafAppend(other) {
@@ -133,14 +135,22 @@ class Append extends RopeSequence {
 
   forEachInner(f, from, to, start) {
     let leftLen = this.left.length
-    if (from < leftLen) this.left.forEachInner(f, from, Math.min(to, leftLen), start)
-    if (to > leftLen) this.right.forEachInner(f, Math.max(from - leftLen, 0), Math.min(this.length, to) - leftLen, start + leftLen)
+    if (from < leftLen &&
+        this.left.forEachInner(f, from, Math.min(to, leftLen), start) === false)
+      return false
+    if (to > leftLen &&
+        this.right.forEachInner(f, Math.max(from - leftLen, 0), Math.min(this.length, to) - leftLen, start + leftLen) === false)
+      return false
   }
 
   forEachInvertedInner(f, from, to, start) {
     let leftLen = this.left.length
-    if (from > leftLen) this.right.forEachInvertedInner(f, from - leftLen, Math.max(to, leftLen) - leftLen, start + leftLen)
-    if (to < leftLen) this.left.forEachInvertedInner(f, Math.min(from, leftLen), to, start)
+    if (from > leftLen &&
+        this.right.forEachInvertedInner(f, from - leftLen, Math.max(to, leftLen) - leftLen, start + leftLen) === false)
+      return false
+    if (to < leftLen &&
+        this.left.forEachInvertedInner(f, Math.min(from, leftLen), to, start) === false)
+      return false
   }
 
   sliceInner(from, to) {

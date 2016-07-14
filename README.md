@@ -41,7 +41,7 @@ Create a rope repesenting a sub-sequence of this rope.
 
 Retrieve the element at the given position from this rope.
 
-**`forEach`**`(f: fn(element: T, index: number), from: ?number, to: ?number)`
+**`forEach`**`(f: fn(element: T, index: number) → ?bool, from: ?number, to: ?number)`
 
 Call the given function for each element between the given indices.
 This tends to be more efficient than looping over the indices and
@@ -50,6 +50,8 @@ element.
 
 `to` may be less then `from`, in which case the iteration will happen
 in reverse (starting at index `from - 1`, down to index `to`.
+
+The iteration function may return `false` to abort iteration early.
 
 **`flatten`**`() → [T]`
 

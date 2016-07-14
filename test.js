@@ -69,4 +69,8 @@ assert.equal(small.prepend(empty), small, "ID prepend")
 assert.equal(empty.append(empty), empty, "empty append")
 assert.equal(small.slice(0, 0), empty, "empty slice")
 
+var sum = 0
+small.forEach(function(v) { if (v == 2) return false; sum += v })
+assert.equal(sum, 1, "abort iteration")
+
 console.log("All passed")

@@ -33,11 +33,17 @@ var SIZE = 10000
 function checkForEach(rope, name, start, end, offset) {
   var cur = start
   rope.forEach(function(elt, i) {
-    assert.equal(elt, cur + offset, "Proper element at " + cur + " in " + name + "::" + elt + " vs "+  (cur + offset))
+    assert.equal(elt, cur + offset, "Proper element at " + cur + " in " + name)
     assert.equal(cur, i, "Accurate index passed")
     cur++
   }, start, end)
   assert.equal(cur, end, "Enough elements iterated in " + name)
+  rope.forEach(function(elt, i) {
+    cur--
+    assert.equal(elt, cur + offset, "Proper element during reverse iter at " + cur + " in " + name)
+    assert.equal(cur, i, "Accurate index passed by reverse iter")
+  }, end, start)
+  assert.equal(cur, start, "Enough elements reverse-iterated in " + name + " -- " + cur + " " + start)
 }
 
 function check(rope, size, name, offset) {

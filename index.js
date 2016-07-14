@@ -50,7 +50,10 @@ class RopeSequence {
   // indices and calling `get`, because it doesn't have to descend the
   // tree for every element.
   forEach(f, from = 0, to = this.length) {
-    this.forEachInner(f, from, to, 0)
+    if (from <= to)
+      this.forEachInner(f, from, to, 0)
+    else
+      this.forEachInvertedInner(f, from, to, 0)
   }
 
   // :: (?union<[T], RopeSequence<T>>) → RopeSequence<T>
@@ -86,6 +89,10 @@ class Leaf extends RopeSequence {
 
   forEachInner(f, from, to, start) {
     for (let i = from; i < to; i++) f(this.values[i], start + i)
+  }
+
+  forEachInvertedInner(f, from, to, start) {
+    for (let i = from - 1; i >= to; i--) f(this.values[i], start + i)
   }
 
   leafAppend(other) {
@@ -128,6 +135,12 @@ class Append extends RopeSequence {
     let leftLen = this.left.length
     if (from < leftLen) this.left.forEachInner(f, from, Math.min(to, leftLen), start)
     if (to > leftLen) this.right.forEachInner(f, Math.max(from - leftLen, 0), Math.min(this.length, to) - leftLen, start + leftLen)
+  }
+
+  forEachInvertedInner(f, from, to, start) {
+    let leftLen = this.left.length
+    if (from > leftLen) this.right.forEachInvertedInner(f, from - leftLen, Math.max(to, leftLen) - leftLen, start + leftLen)
+    if (to < leftLen) this.left.forEachInvertedInner(f, Math.min(from, leftLen), to, start)
   }
 
   sliceInner(from, to) {

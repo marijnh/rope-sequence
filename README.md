@@ -48,6 +48,9 @@ This tends to be more efficient than looping over the indices and
 calling `get`, because it doesn't have to descend the tree for every
 element.
 
+`to` may be less then `from`, in which case the iteration will happen
+in reverse (starting at index `from - 1`, down to index `to`.
+
 **`flatten`**`() → [T]`
 
 Return the content of this rope as an array.

@@ -73,4 +73,6 @@ var sum = 0
 small.forEach(function(v) { if (v == 2) return false; sum += v })
 assert.equal(sum, 1, "abort iteration")
 
+assert.deepEqual(small.map(function(x) { return x + 1 }), [2, 3, 5], "mapping")
+
 console.log("All passed")

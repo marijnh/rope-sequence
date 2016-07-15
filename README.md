@@ -53,6 +53,11 @@ in reverse (starting at index `from - 1`, down to index `to`.
 
 The iteration function may return `false` to abort iteration early.
 
+**`map`**`(f: fn(element: T, index: number) → U, from: ?number, to: ?number) → [U]`
+
+Map the given functions over the elements of the rope, producing a
+flat array.
+
 **`flatten`**`() → [T]`
 
 Return the content of this rope as an array.

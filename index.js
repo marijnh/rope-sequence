@@ -44,7 +44,7 @@ class RopeSequence {
     return this.getInner(i)
   }
 
-  // :: ((element: T, index: number), ?number, ?number)
+  // :: ((element: T, index: number) → ?bool, ?number, ?number)
   // Call the given function for each element between the given
   // indices. This tends to be more efficient than looping over the
   // indices and calling `get`, because it doesn't have to descend the
@@ -54,6 +54,15 @@ class RopeSequence {
       this.forEachInner(f, from, to, 0)
     else
       this.forEachInvertedInner(f, from, to, 0)
+  }
+
+  // :: ((element: T, index: number) → U, ?number, ?number) → [U]
+  // Map the given functions over the elements of the rope, producing
+  // a flat array.
+  map(f, from = 0, to = this.length) {
+    let result = []
+    this.forEach((elt, i) => result.push(f(elt, i)), from, to)
+    return result
   }
 
   // :: (?union<[T], RopeSequence<T>>) → RopeSequence<T>

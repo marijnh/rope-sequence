@@ -21,6 +21,6 @@
   "author": "Marijn Haverbeke <marijnh@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "buble": "^0.12.5"
+    "buble": "^0.14.0"
   }
 }

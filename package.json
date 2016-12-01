@@ -1,6 +1,6 @@
 {
   "name": "rope-sequence",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Rope-based persistent sequence type",
   "main": "dist/index.js",
   "scripts": {

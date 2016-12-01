@@ -1,4 +1,4 @@
-const GOOD_LEAF_SIZE = 50
+const GOOD_LEAF_SIZE = 200
 
 // :: class<T> A rope sequence is a persistent sequence data structure
 // that supports appending, prepending, and slicing without doing a

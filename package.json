@@ -3,7 +3,11 @@
   "version": "1.2.2",
   "description": "Rope-based persistent sequence type",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "prepare": "npm run build",
     "test": "node test.js",
     "prepublish": "buble index.js -o dist/index.js"
   },
@@ -21,6 +25,8 @@
   "author": "Marijn Haverbeke <marijnh@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "buble": "^0.14.0"
+    "buble": "^0.19.8",
+    "rollup": "^1.26.3",
+    "rollup-plugin-commonjs": "^10.1.0"
   }
 }

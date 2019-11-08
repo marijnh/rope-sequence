@@ -5,11 +5,11 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -c -w",
+    "build:cjs": "buble index.js -o dist/index.js",
+    "build:mjs": "rollup -c",
+    "build": "npm run build:cjs && npm run build:mjs",
     "prepare": "npm run build",
-    "test": "node test.js",
-    "prepublish": "buble index.js -o dist/index.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",

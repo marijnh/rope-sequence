@@ -3,7 +3,7 @@
   "version": "1.3.0",
   "description": "Rope-based persistent sequence type",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.es.js",
   "scripts": {
     "build:cjs": "buble index.js -o dist/index.js",
     "build:mjs": "rollup -c",

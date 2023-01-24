@@ -20,7 +20,7 @@
     "rope",
     "sequence"
   ],
-  "author": "Marijn Haverbeke <marijnh@gmail.com>",
+  "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-buble": "^0.20.0",

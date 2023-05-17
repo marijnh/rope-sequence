@@ -1,5 +1,5 @@
 /node_modules
 .tern-*
-/dist
-
+/dist/index.js
+/dist/index.cjs
 *.mjs

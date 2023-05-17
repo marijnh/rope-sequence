@@ -1,6 +1,6 @@
 {
   "name": "rope-sequence",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Rope-based persistent sequence type",
   "main": "dist/index.cjs",
   "type": "module",

@@ -1,14 +1,13 @@
-import commonjs from 'rollup-plugin-commonjs'
 import buble from '@rollup/plugin-buble'
 
 export default {
   input: 'index.js',
   output: [{
-    file: 'dist/index.es.js',
+    file: 'dist/index.js',
     format: 'esm'
   }, {
-    file: 'dist/index.js',
+    file: 'dist/index.cjs',
     format: 'cjs'
   }],
-  plugins: [commonjs(), buble()]
+  plugins: [buble()]
 }

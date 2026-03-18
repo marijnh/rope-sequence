@@ -1,3 +1,5 @@
+**This repository has moved to https://code.haverbeke.berlin/marijn/rope-sequence**
+
 # rope-sequence
 
 This module implements a single data type, `RopeSequence`, which is a
